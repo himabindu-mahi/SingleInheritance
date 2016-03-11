@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+class Rectangle                                                  // parent class
+{
+	public void getRectangle(int b,int h)
+	{
+		float r=(float)1/2*b*h;
+		System.out.println("Area of Rectangle:  "+r);
+	}
+	
+	public int getTriangle(int w,int h)
+	{
+		return w*h;
+	}
+}
+class RectangleTriangle extends Rectangle						   //child class (Inheritance)
+{
+	public static void main(String args[])
+	{
+		RectangleTriangle rt=new RectangleTriangle();             //object creation
+		Scanner sc=new Scanner(System.in);						  // Takes input from the keyboard
+		System.out.println("Enter breath value");		
+		int b=sc.nextInt();
+		System.out.println("Enter Height value"); 
+		int h=sc.nextInt();                                        // Assigned to that values in to the variable
+		System.out.println("Enter Width value");
+		int w=sc.nextInt();
+		rt.getRectangle(b,h);                                      // Call to parent class methods
+		System.out.println("Area of Triangle : "+rt.getTriangle(w,h));
+	}
+}
+
+/* Output:--
+Enter breath value
+3
+Enter Height value
+6
+Enter Width value
+5
+Area of Rectangle:  9.0
+Area of Triangle : 30
+
+*/
